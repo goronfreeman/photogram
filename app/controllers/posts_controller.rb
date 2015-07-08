@@ -1,4 +1,10 @@
 class PostsController < ApplicationController
+  before_action :retrieve_post, only: [:show, :edit, :update, :destroy]
+
+  def retrieve_post
+    @post = Post.find(params[:id])
+  end
+
   def index
     @posts = Post.all
   end
@@ -19,21 +25,25 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:success] = 'Post updated, hombre'
       redirect_to @post
     else
-      flash[:alert] = "Oh god, you weren't meant to see this picture!"
+      flash[:alert] = 'Something is wrong with your form!'
       render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      flash[:success] = 'Problem solved! Post deleted.'
+      redirect_to posts_path
     end
   end
 
