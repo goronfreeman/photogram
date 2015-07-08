@@ -26,6 +26,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'capybara'
 # factory girl for TDD
 gem 'factory_girl_rails'
+# image uploading
+gem 'paperclip', '~> 4.3'
+gem 'simple_form'
+gem 'annotate', '~> 2.6.6'
+gem 'haml'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
