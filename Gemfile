@@ -32,6 +32,7 @@ gem 'paperclip', '~> 4.3'
 gem 'simple_form'
 gem 'annotate', '~> 2.6.6'
 gem 'haml'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
